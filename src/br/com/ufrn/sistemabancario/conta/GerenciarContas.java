@@ -58,4 +58,22 @@ public class GerenciarContas {
 			}
 		}
 	}
+	
+	public void trasferencia(int numeroConta1, int numeroConta2 , float valor) {
+		
+		Conta contaOrigem = null;
+		Conta contaDestino = null;
+		
+		for(int i = 0; i < contas.size(); i++) {
+			if(numeroConta1 == contas.get(i).getNumero()) {
+				contaOrigem = contas.get(i);
+			}
+			if(numeroConta2 == contas.get(i).getNumero()) {
+				contaDestino = contas.get(i);
+			}
+		}
+		
+		contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
+		contaDestino.setSaldo(contaDestino.getSaldo() + valor);
+	}
 }
