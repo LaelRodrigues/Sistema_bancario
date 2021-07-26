@@ -41,7 +41,7 @@ public class GerenciarContas {
 		return -1;
 	}
 	
-	public void CreditarConta(int numero, float valor) {
+	public void creditarConta(int numero, float valor) {
 		
 		for(int i = 0; i < contas.size(); i++) {
 			if(numero == contas.get(i).getNumero()) {
@@ -50,7 +50,7 @@ public class GerenciarContas {
 		}
 	}
 	
-	public void DebitarConta (int numero, float valor) {
+	public void cebitarConta (int numero, float valor) {
 		
 		for(int i = 0; i < contas.size(); i++) {
 			if(numero == contas.get(i).getNumero()) {
