@@ -50,7 +50,7 @@ public class GerenciarContas {
 		}
 	}
 	
-	public void cebitarConta (int numero, float valor) {
+	public void debitarConta (int numero, float valor) {
 		
 		for(int i = 0; i < contas.size(); i++) {
 			if(numero == contas.get(i).getNumero()) {
