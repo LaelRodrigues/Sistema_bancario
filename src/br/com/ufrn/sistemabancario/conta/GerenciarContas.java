@@ -59,7 +59,7 @@ public class GerenciarContas {
 		}
 	}
 	
-	public void trasferencia(int numeroConta1, int numeroConta2 , float valor) {
+	public void efetuarTrasferencia(int numeroConta1, int numeroConta2 , float valor) {
 		
 		Conta contaOrigem = null;
 		Conta contaDestino = null;
