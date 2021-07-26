@@ -7,10 +7,12 @@ public class GerenciarContas {
 	private ArrayList<Conta> contas;
 	
 	public GerenciarContas() {
+		
 		contas = new ArrayList<>();
 	}
 
 	public GerenciarContas(ArrayList<Conta> contas) {
+		
 		super();
 		this.contas = contas;
 	}
@@ -20,14 +22,17 @@ public class GerenciarContas {
 	}
 
 	public void setContas(ArrayList<Conta> contas) {
+		
 		this.contas = contas;
 	}
 	
 	public void cadastrarConta(int numero) {
+		
 		Conta conta = new Conta(numero, 0.0f);
 		contas.add(conta);
 	}
 	public float consultarSaldo(int numero) {
+		
 		for(int i = 0; i < contas.size(); i++) {
 			if(numero == contas.get(i).getNumero()) {
 				return contas.get(i).getSaldo();
@@ -35,5 +40,22 @@ public class GerenciarContas {
 		}
 		return -1;
 	}
-
+	
+	public void CreditarConta(int numero, float valor) {
+		
+		for(int i = 0; i < contas.size(); i++) {
+			if(numero == contas.get(i).getNumero()) {
+				contas.get(i).setSaldo(contas.get(i).getSaldo() + valor);
+			}
+		}
+	}
+	
+	public void DebitarConta (int numero, float valor) {
+		
+		for(int i = 0; i < contas.size(); i++) {
+			if(numero == contas.get(i).getNumero()) {
+				contas.get(i).setSaldo(contas.get(i).getSaldo() - valor);
+			}
+		}
+	}
 }
