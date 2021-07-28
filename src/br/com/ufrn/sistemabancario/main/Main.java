@@ -23,6 +23,8 @@ public class Main {
 				System.out.println("3 - Creditar valor em uma conta");
 				System.out.println("4 - Debitar valor em uma conta");
 				System.out.println("5 - Efetuar transferencia entre duas conta");
+				System.out.println("6 - Cadastrar uma conta poupanca");
+				System.out.println("7 - Render juros nas contas do tipo poupanca");
 				System.out.println("0 - Sair do sistema");
 				System.out.println("Digite um numero: ");
 				escolha = ler.nextInt();
@@ -88,6 +90,23 @@ public class Main {
 						System.out.println();
 						System.out.println("trasferencia efetuada com sucesso.");
 						break;
+					
+					case 6:
+						System.out.println();
+						System.out.println("Digite o numero da conta: ");
+						numeroConta = ler.nextInt();
+						contas.criarContaPoupanca(numeroConta);
+						System.out.println();
+						System.out.println("Conta poupanca cadastrada com sucesso.");
+						break;
+					
+					case 7:
+						System.out.println();
+						System.out.println("Digite o valor da taxa de juros: ");
+						valor = ler.nextFloat();
+						contas.renderJuros(valor);
+						System.out.println();
+						System.out.println("juros adicionados com sucesso.");
 					
 					default:
 						System.out.println("Numero invalido");
