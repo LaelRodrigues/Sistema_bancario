@@ -1,7 +1,6 @@
 package br.com.ufrn.sistemabancario.conta;
 
 import java.util.ArrayList;
-import  java.lang.reflect.Field;  
 
 public class GerenciarContas {
 	 

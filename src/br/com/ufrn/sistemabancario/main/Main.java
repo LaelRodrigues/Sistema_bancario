@@ -23,6 +23,7 @@ public class Main {
 				System.out.println("3 - Creditar valor em uma conta");
 				System.out.println("4 - Debitar valor em uma conta");
 				System.out.println("5 - Efetuar transferencia entre duas conta");
+				System.out.println("6 - cadastrar uma conta bonus");
 				System.out.println("0 - Sair do sistema");
 				System.out.println("Digite um numero: ");
 				escolha = ler.nextInt();
@@ -89,6 +90,15 @@ public class Main {
 						System.out.println("trasferencia efetuada com sucesso.");
 						break;
 					
+					case 6:
+						System.out.println();
+						System.out.println("Digite o numero da conta: ");
+						numeroConta = ler.nextInt();
+						contas.criarContaBonus(numeroConta);
+						System.out.println();
+						System.out.println("Conta bonus cadastrada com sucesso.");
+						
+						
 					default:
 						System.out.println("Numero invalido");
 				}
