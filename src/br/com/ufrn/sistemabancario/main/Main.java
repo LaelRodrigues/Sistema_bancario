@@ -107,6 +107,7 @@ public class Main {
 						contas.renderJuros(valor);
 						System.out.println();
 						System.out.println("juros adicionados com sucesso.");
+						break;
 					
 					default:
 						System.out.println("Numero invalido");
