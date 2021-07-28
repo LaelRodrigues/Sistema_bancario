@@ -76,4 +76,13 @@ public class GerenciarContas {
 		contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
 		contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 	}
+	
+	public void renderJuros(float taxaPercentual) {
+		
+		for(int i = 0; i < contas.size(); i++) {
+			if(contas.get(i) instanceof ContaPoupanca) {
+				contas.get(i).setSaldo(contas.get(i).getSaldo() * (1.0f +(taxaPercentual/100.0f)));
+			}
+		}
+	}
 }
