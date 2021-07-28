@@ -85,4 +85,10 @@ public class GerenciarContas {
 			}
 		}
 	}
+	
+	public void criarContaPoupanca(int numero) {
+		
+		ContaPoupanca conta = new ContaPoupanca(numero, 0.0f);
+		contas.add(conta);
+	}
 }
