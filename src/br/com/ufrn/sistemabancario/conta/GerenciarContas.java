@@ -1,6 +1,7 @@
 package br.com.ufrn.sistemabancario.conta;
 
 import java.util.ArrayList;
+import  java.lang.reflect.Field;  
 
 public class GerenciarContas {
 	 
@@ -45,7 +46,13 @@ public class GerenciarContas {
 		
 		for(int i = 0; i < contas.size(); i++) {
 			if(numero == contas.get(i).getNumero()) {
-				contas.get(i).setSaldo(contas.get(i).getSaldo() + valor);
+				if(contas.get(i) instanceof ContaBonus) {
+					ContaBonus conta = (ContaBonus) contas.get(i);
+					conta.setSaldo(conta.getSaldo() + valor);
+					conta.setPontuacao(conta.getPontuacao() + (int)valor/(int)100);
+				} else {
+					contas.get(i).setSaldo(contas.get(i).getSaldo() + valor);
+				}
 			}
 		}
 	}
@@ -74,6 +81,18 @@ public class GerenciarContas {
 		}
 		
 		contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
-		contaDestino.setSaldo(contaDestino.getSaldo() + valor);
+		if(contaDestino instanceof ContaBonus) {
+			ContaBonus contaBonus = (ContaBonus) contaDestino;
+			contaBonus.setSaldo(contaBonus.getSaldo() + valor);
+			contaBonus.setPontuacao(contaBonus.getPontuacao() + ((int)valor/(int)200));
+		} else {
+			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
+		}
+	}
+	
+	public void criarContaBonus(int numero) {
+		
+		ContaBonus conta = new ContaBonus(numero, 0.0f, 10);
+		contas.add(conta);
 	}
 }
